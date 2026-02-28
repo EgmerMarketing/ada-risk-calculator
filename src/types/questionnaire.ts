@@ -1,39 +1,32 @@
+export interface QuestionOption {
+  value: string | number | boolean;
+  label: string;
+  description?: string;
+}
+
+export interface Question {
+  id: string;
+  title: string;
+  subtitle?: string;
+  type: 'boolean' | 'radio' | 'select';
+  options: QuestionOption[];
+  required: boolean;
+}
+
 export interface QuestionnaireData {
   industry: string;
   state: string;
   hasWebsite: boolean;
-  websitePlatform: string;
+  websitePlatform?: string;
   hasAccessibilityFeatures: boolean;
-  numberOfEmployees: string;
-  annualRevenue: string;
-  hasBeenSuedBefore: boolean;
+  employeeCount: string;
+  revenueRange: string;
+  beenSued: boolean;
 }
 
-export interface Question {
-  id: keyof QuestionnaireData;
-  title: string;
-  subtitle?: string;
-  type: 'select' | 'boolean' | 'radio';
-  options: Array<{
-    value: string | boolean;
-    label: string;
-    description?: string;
-  }>;
-}
-
-export interface RiskResult {
+export interface RiskScore {
   score: number;
   level: 'Low' | 'Medium' | 'High' | 'Critical';
   color: string;
-  description: string;
-}
-
-export interface LawsuitStats {
-  totalLawsuits: string;
-  lawsuitsThisYear: string;
-  topLawFirms: string;
-  averageSettlement: string;
-  averageDefenseCost: string;
-  accessiBeFineStat: string;
-  governmentDeadline: string;
+  recommendations: string[];
 }

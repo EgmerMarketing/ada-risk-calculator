@@ -5,8 +5,8 @@ import { ChevronRight } from 'lucide-react';
 
 interface QuestionCardProps {
   question: Question;
-  value: string | boolean;
-  onChange: (value: string | boolean) => void;
+  value: string | number | boolean;
+  onChange: (value: string | number | boolean) => void;
   onNext: () => void;
   canProceed: boolean;
 }
