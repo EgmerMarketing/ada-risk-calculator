@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ADA Lawsuit Risk Calculator
+
+A comprehensive lead-generation tool that helps businesses assess their risk of ADA website accessibility lawsuits.
+
+## Features
+
+- **Interactive Risk Assessment**: Step-by-step questionnaire covering all major risk factors
+- **Real-time Risk Calculation**: Client-side scoring based on industry data
+- **Professional Design**: Navy, white, and red color scheme with smooth animations
+- **Mobile Responsive**: Works perfectly on all device sizes
+- **Lead Generation**: Email capture for full accessibility reports
+- **Educational Content**: Industry statistics and recommendations
+
+## Tech Stack
+
+- **Next.js 14**: React framework with App Router
+- **Tailwind CSS**: Utility-first CSS framework
+- **TypeScript**: Type-safe development
+- **Lucide React**: Icon library (no emojis)
+- **Static Export**: Compatible with Vercel and other static hosts
+
+## Risk Scoring Logic
+
+The calculator evaluates businesses based on:
+
+- **Industry Type**: E-commerce (+20), Healthcare/Government (+25)
+- **Geographic Risk**: High-lawsuit states NY, CA, FL, PA, MA (+15)
+- **Website Platform**: WordPress, Wix, Squarespace (+10)
+- **Accessibility Features**: No features implemented (+25)
+- **Business Size**: Revenue over $1M (+10), 50+ employees (+5)
+- **Legal History**: Previous accessibility lawsuits (+20)
+
+## Key Statistics Displayed
+
+- 15,332 lawsuits filed since 2022
+- Nearly 4,000 lawsuits in 2025 alone
+- 90% filed by just 16 law firms
+- Average settlement: $5,000-$25,000
+- Average defense costs: $10,000-$50,000
+- Government deadline: April 24, 2026
 
 ## Getting Started
 
-First, run the development server:
+### Installation
+
+```bash
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Deploy
 
-## Learn More
+The application is configured for static export and can be deployed to:
+- Vercel
+- Netlify
+- GitHub Pages
+- Any static hosting service
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+├── app/                    # Next.js App Router
+├── components/             # React components
+│   ├── ProgressBar.tsx    # Progress indicator
+│   ├── QuestionCard.tsx   # Individual question UI
+│   └── ResultsPage.tsx    # Results display with gauge
+├── types/                  # TypeScript interfaces
+├── utils/                  # Business logic and calculations
+└── tailwind.config.ts     # Tailwind configuration
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Customization
 
-## Deploy on Vercel
+### Updating Questions
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Modify `src/utils/questionnaire.ts` to add or change assessment questions.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Risk Scoring
+
+Adjust scoring logic in the `calculateRiskScore` function.
+
+### Design
+
+Update colors and styling in `tailwind.config.ts` and component files.
+
+## Lead Generation
+
+The app includes an email capture form that triggers after assessment completion. In production, integrate with your preferred email marketing platform or CRM.
+
+## Accessibility
+
+This calculator is built with accessibility in mind:
+- Semantic HTML structure
+- Keyboard navigation support
+- Screen reader friendly
+- High contrast design
+- No reliance on color alone
+
+## License
+
+Built by **Egmer Marketing** - Custom-coded, accessible websites for small businesses.
+
+## Contributing
+
+This is a client project for Egmer Marketing. For questions or customizations, contact the development team.
+
+## Support
+
+For technical support or feature requests, please reach out to Egmer Marketing.
